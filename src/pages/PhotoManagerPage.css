@@ -1,0 +1,144 @@
+/* src/pages/PhotoManagerPage.css */
+
+.manager-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .photo-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .photo-card {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  }
+  
+  .photo-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo-preview {
+    height: 250px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  
+  .photo-card:hover img {
+    opacity: 0.8;
+  }
+  
+  /* skeleton loading */
+  .skeleton {
+    background: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite linear;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  .empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    margin-top: 50px;
+  }
+  
+  /* 버튼들 */
+  .upload-button, .download-button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .upload-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+  }
+  
+  .upload-button:hover {
+    background-color: #43a047;
+  }
+  
+  .download-button {
+    background-color: #3897f0;
+    color: white;
+    border: none;
+  }
+  
+  .download-button:hover {
+    background-color: #357ae8;
+  }
+  
+  /* 태그 버튼 */
+  .tag-selector {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tag-selector button {
+    padding: 8px 14px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  
+  .tag-selector button:hover {
+    background-color: #fafafa;
+  }
+  
+  .tag-selector .active {
+    background-color: #3897f0;
+    color: white;
+    border
+  

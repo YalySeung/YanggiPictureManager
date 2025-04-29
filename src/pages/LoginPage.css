@@ -1,0 +1,40 @@
+/* src/pages/LoginPage.css */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fafafa;
+  }
+  
+  .login-container {
+    width: 350px;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+  }
+  
+  .logo {
+    font-family: 'Grand Hotel', cursive;
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #262626;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field {
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fafafa;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    background-color: #
+  
