@@ -6,12 +6,12 @@ import './LoginPage.css'; // 스타일 분리
 
 function LoginPage() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = await login(email, password);
+    const success = await login(id, password);
     if (success) {
       navigate('/manager');
     } else {
@@ -26,9 +26,9 @@ function LoginPage() {
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="이메일"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            placeholder="아이디"
             className="input-field"
           />
           <input
