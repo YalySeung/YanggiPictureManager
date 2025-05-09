@@ -6,19 +6,27 @@ import './LoginPage.css'; // 스타일 분리
 
 function LoginPage() {
   const navigate = useNavigate();
-  const [id, setId] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = await login(id, password);
-    if (success) {
-      navigate('/manager');
-    } else {
-      alert('로그인 실패');
+    console.log('📨 로그인 시도'); // 1
+  
+    try {
+      const success = await login(username, password);
+      console.log('✅ 로그인 결과:', success); // 2
+  
+      if (success) {
+        console.log('➡️ manager 페이지로 이동');
+        navigate('/manager');
+      } else {
+        alert('로그인 실패');
+      }
+    } catch (err) {
+      console.error('❌ 로그인 중 에러 발생:', err); // 3
     }
   };
-
   return (
     <div className="login-page">
       <div className="login-container">
@@ -26,8 +34,8 @@ function LoginPage() {
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
-            value={id}
-            onChange={(e) => setId(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="아이디"
             className="input-field"
           />
